@@ -1,0 +1,5 @@
+127.0.0.1 - - [03/Mar/2024:23:39:06 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [03/Mar/2024:23:39:06 +0700] "GET /HelloServlet/customers/?name=Mr.%20Smith&name=Mrs.%20Smith HTTP/1.1" 200 97
+0:0:0:0:0:0:0:1 - - [03/Mar/2024:23:39:11 +0700] "GET /Jersey/rest/services/customers HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [03/Mar/2024:23:39:12 +0700] "GET /Jersey/rest/services/customers HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [03/Mar/2024:23:39:15 +0700] "POST /Jersey/rest/services/customers/create HTTP/1.1" 201 12

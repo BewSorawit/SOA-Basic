@@ -1,0 +1,14 @@
+package th.ac.ku.kps.eng.cpe;
+
+@Path("/services")
+public class CustomerService {
+	CustomerDAO cusDao = new CustomerDAO();
+
+	@GET
+	@Path("/customers")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Customer> getUsers() {
+		return cusDao.getAllCustomers();
+	}
+
+}

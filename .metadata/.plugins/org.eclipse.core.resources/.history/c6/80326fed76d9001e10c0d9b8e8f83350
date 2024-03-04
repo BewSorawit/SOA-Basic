@@ -1,0 +1,60 @@
+package th.ac.ku.kps.eng.cpe.dao;
+
+import th.ac.ku.kps.eng.cpe.entity.Customer;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class CustomerDAO {
+    private static ArrayList<Customer> customers;
+
+    static {
+        customers = new ArrayList<>();
+        initializeData();
+    }
+
+    private static void initializeData() {
+        Customer c1 = new Customer("Mr. Smith");
+        Customer c2 = new Customer("Mrs. Smith");
+
+        customers.add(c1);
+        customers.add(c2);
+    }
+
+    public static ArrayList<Customer> getAllCustomers() {
+        ArrayList<Customer> listOfCustomers = new ArrayList<>();
+
+        try {
+            File file = new File("Customer.dat");
+
+            if (!file.exists()) {
+                // If the file doesn't exist, initialize data and save it to the file
+                initializeData();
+                saveCustomerList(customers);
+            } else {
+                // If the file exists, read data from the file
+                FileInputStream fis = new FileInputStream(file);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                listOfCustomers = (ArrayList<Customer>) ois.readObject();
+                ois.close();
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace(); // Handle exceptions appropriately based on your application's requirements
+        }
+
+        return listOfCustomers;
+    }
+
+    private void saveCustomerList(List<Customer> cusList) {
+        try {
+            File file = new File("Customer.dat");
+            FileOutputStream fos = new FileOutputStream(file);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(cusList);
+            oos.close();
+        } catch (IOException e) {
+            e.printStackTrace(); // Handle exceptions appropriately based on your application's requirements
+        }
+    }
+}
