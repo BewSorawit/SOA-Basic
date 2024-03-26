@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 26, 2024, 9:45:28 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="phpmyadmin" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.example.model.PmaRelation" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="pma__relation">
+        <composite-id class="com.example.model.PmaRelationId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="masterDb" type="string">
+                <column length="64" name="master_db"/>
+            </key-property>
+            <key-property name="masterTable" type="string">
+                <column length="64" name="master_table"/>
+            </key-property>
+            <key-property name="masterField" type="string">
+                <column length="64" name="master_field"/>
+            </key-property>
+        </composite-id>
+        <property generated="never" lazy="false" name="foreignDb" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="foreign_db" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="foreignTable" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="foreign_table" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="foreignField" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="foreign_field" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

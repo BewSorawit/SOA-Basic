@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 21, 2024, 1:16:02 PM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="test_soa" dynamic-insert="false" dynamic-update="false" mutable="true" name="th.ac.ku.kps.eng.cpe.entity.Phonenumber" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="phonenumber">
+        <id name="phonenumberId" type="java.lang.Integer">
+            <column name="PHONENUMBER_ID"/>
+            <generator class="identity"/>
+        </id>
+        <many-to-one class="th.ac.ku.kps.eng.cpe.entity.Customer" embed-xml="true" fetch="select" insert="true" name="customer" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column name="CUS_ID"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="number" optimistic-lock="true" type="string" unique="false">
+            <column name="NUMBER"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -9,6 +9,7 @@ import java.util.List;
 
 public class CustomerDAO {
 	public CustomerDAO() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

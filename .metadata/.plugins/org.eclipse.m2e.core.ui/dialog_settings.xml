@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\User\Desktop\SOA-Basic\HelloHibibernate"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -43,6 +44,10 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="prob2"/>
+			<item value="prob1"/>
+			<item value="prob5"/>
+			<item value="secureRest"/>
 			<item value="hibernate"/>
 			<item value="rest"/>
 			<item value="servlet"/>
@@ -50,6 +55,10 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="Prob2"/>
+			<item value="Prob1"/>
+			<item value="Prob5"/>
+			<item value="HelloSecure"/>
 			<item value="HelloHibibernate"/>
 			<item value="Hibernate"/>
 			<item value="Jersey"/>

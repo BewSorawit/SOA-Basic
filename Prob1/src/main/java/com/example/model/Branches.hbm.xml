@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 26, 2024, 9:45:28 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="se" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.example.model.Branches" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="branches">
+        <id name="branchId" type="string">
+            <column length="10" name="branchID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="branchName" optimistic-lock="true" type="string" unique="false">
+            <column length="30" name="branchName" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="branchAddress" optimistic-lock="true" type="string" unique="false">
+            <column length="50" name="branchAddress" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="userses" optimistic-lock="true" sort="unsorted" table="users">
+            <key on-delete="noaction">
+                <column length="10" name="branchID" not-null="true"/>
+            </key>
+            <one-to-many class="com.example.model.Users" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="shiftses" optimistic-lock="true" sort="unsorted" table="shifts">
+            <key on-delete="noaction">
+                <column length="10" name="branchID" not-null="true"/>
+            </key>
+            <one-to-many class="com.example.model.Shifts" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="fcdetailses" optimistic-lock="true" sort="unsorted" table="fcdetails">
+            <key on-delete="noaction">
+                <column length="10" name="branchID" not-null="true"/>
+            </key>
+            <one-to-many class="com.example.model.Fcdetails" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 26, 2024, 9:45:28 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="phpmyadmin" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.example.model.PmaColumnInfo" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="pma__column_info">
+        <id name="id" type="java.lang.Integer">
+            <column name="id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="dbName" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="db_name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="tableName" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="table_name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="columnName" optimistic-lock="true" type="string" unique="false">
+            <column length="64" name="column_name" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="comment" optimistic-lock="true" type="string" unique="false">
+            <column name="comment" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="mimetype" optimistic-lock="true" type="string" unique="false">
+            <column name="mimetype" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="transformation" optimistic-lock="true" type="string" unique="false">
+            <column name="transformation" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="transformationOptions" optimistic-lock="true" type="string" unique="false">
+            <column name="transformation_options" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="inputTransformation" optimistic-lock="true" type="string" unique="false">
+            <column name="input_transformation" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="inputTransformationOptions" optimistic-lock="true" type="string" unique="false">
+            <column name="input_transformation_options" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

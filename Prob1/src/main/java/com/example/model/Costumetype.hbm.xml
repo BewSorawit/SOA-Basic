@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 26, 2024, 9:45:28 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="test_spring" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.example.model.Costumetype" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="costumetype">
+        <id name="typeId" type="java.lang.Integer">
+            <column name="type_id"/>
+            <generator class="identity"/>
+        </id>
+        <property generated="never" lazy="false" name="typename" optimistic-lock="true" type="string" unique="false">
+            <column name="typename" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="costumes" optimistic-lock="true" sort="unsorted" table="costume">
+            <key on-delete="noaction">
+                <column name="type_id"/>
+            </key>
+            <one-to-many class="com.example.model.Costume" embed-xml="true" not-found="exception"/>
+        </set>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="costumes_1" optimistic-lock="true" sort="unsorted" table="costume">
+            <key on-delete="noaction">
+                <column name="type_id"/>
+            </key>
+            <one-to-many class="com.example.model.Costume" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

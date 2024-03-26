@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 26, 2024, 9:45:28 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="se" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.example.model.Typetimes" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="typetimes">
+        <id name="timeId" type="string">
+            <column length="10" name="timeID"/>
+            <generator class="assigned"/>
+        </id>
+        <property generated="never" lazy="false" name="timeStart" optimistic-lock="true" type="time" unique="false">
+            <column length="8" name="timeStart" not-null="true"/>
+        </property>
+        <property generated="never" lazy="false" name="timeEnd" optimistic-lock="true" type="time" unique="false">
+            <column length="8" name="timeEnd" not-null="true"/>
+        </property>
+        <set embed-xml="true" fetch="select" inverse="true" lazy="true" mutable="true" name="shiftses" optimistic-lock="true" sort="unsorted" table="shifts">
+            <key on-delete="noaction">
+                <column length="10" name="timeID" not-null="true"/>
+            </key>
+            <one-to-many class="com.example.model.Shifts" embed-xml="true" not-found="exception"/>
+        </set>
+    </class>
+</hibernate-mapping>

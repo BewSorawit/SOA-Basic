@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Mar 26, 2024, 9:45:28 AM by Hibernate Tools 3.6.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="se" dynamic-insert="false" dynamic-update="false" mutable="true" name="com.example.model.Managerreplytofcs" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="managerreplytofcs">
+        <id name="replyId" type="string">
+            <column length="10" name="replyID"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="com.example.model.Absences" embed-xml="true" fetch="select" insert="true" name="absences" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="10" name="absenceID" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="com.example.model.Users" embed-xml="true" fetch="select" insert="true" name="users" not-found="exception" optimistic-lock="true" unique="false" update="true">
+            <column length="10" name="userID" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="status" optimistic-lock="true" type="string" unique="false">
+            <column length="3" name="status" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
